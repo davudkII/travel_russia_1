@@ -1,817 +1,230 @@
-/* Общие стили */
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #2A2C2F;
-  color: #FFFFFF;
-  font-family: 'Inter', Arial, sans-serif;
-  min-height: 100%;
-}
-.page {
-  background-color: #2A2C2F;
-  color: #FFFFFF;
-  font-family: 'Inter', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Шапка */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1184px;
-  margin: 28px auto 0;
-  padding: 0 48px;
-}
-
-.header__logo {
-  width: 176px;
-  height: 52px;
-}
-
-.header__lang-links {
-  display: flex;
-  gap: 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.header__lang-link {
-  color: #FFFFFF;
-  font-size: 24px;
-  line-height: 28px;
-  text-decoration: none;
-}
-
-.header__lang-link_active {
-  text-decoration: underline;
-}
-
-/* Обложка */
-.lead {
-  max-width: 984px;
-  margin: 56px auto 0;
-  text-align: center;
-}
-
-.lead__title {
-  font-size: 96px;
-  line-height: 100px;
-  font-weight: 900;
-  margin: 0 auto 32px;
-  max-width: 720px;
-}
-
-.lead__subtitle {
-  font-size: 30px;
-  line-height: 36px;
-  margin: 0 auto 64px;
-  max-width: 640px;
-}
-
-.lead__image {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.lead__caption {
-  font-size: 10px;
-  line-height: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-align: left;
-  margin: 0;
-}
-
-/* Описание */
-.intro {
-  max-width: 690px;
-  margin: 92px auto 0 calc((100% - 984px) / 2 + 148px);
-  padding: 0;
-}
-
-/* Остальные стили intro */
-.intro__title {
-  font-size: 54px;
-  line-height: 58px;
-  font-weight: 900;
-  margin: 0 0 40px;
-}
-
-.intro__text {
-  font-size: 16px;
-  line-height: 26px;
-  margin: 0 0 33px;
-}
-
-.intro__list {
-  font-size: 12px;
-  line-height: 18px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.intro__item {
-  margin-bottom: 8px;
-}
-
-.intro__item:last-child {
-  margin-bottom: 0;
-}
-
-/* Галерея */
-.photo-grid {
-  max-width: 1184px;
-  margin: 92px auto 0;
-  padding: 0 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.photo-grid__item {
-  width: 100%;
-  height: 213px;
-  object-fit: cover;
-}
-
-/* Карточки мест */
-.places {
-  max-width: 984px;
-  margin: 92px auto 0;
-}
-
-.place {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  grid-template-areas:
-    "title website"
-    "image paragraphs";
-  gap: 48px 40px;
-  margin-bottom: 80px;
-}
-
-.place:last-child {
-  margin-bottom: 0;
-}
-
-.place__title {
-  grid-area: title;
-  font-size: 72px;
-  line-height: 76px;
-  font-weight: 900;
-  margin: 0;
-}
-
-.place__website {
-  grid-area: website;
-  align-self: end;
-}
-
-.place__url-heading {
-  font-size: 12px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  color: #AAAAAA;
-  margin: 0 0 12px;
-  text-transform: uppercase;
-}
-
-.place__link {
-  font-size: 18px;
-  line-height: 22px;
-  color: #FFFFFF;
-}
-
-.place__image {
-  grid-area: image;
-  width: 100%;
-  max-width: 460px;
-  height: auto;
-}
-
-.place__paragraphs {
-  grid-area: paragraphs;
-}
-
-.place__paragraph {
-  font-size: 18px;
-  line-height: 29px;
-  margin: 0 0 25px;
-}
-
-.place__paragraph:last-child {
-  margin-bottom: 0;
-}
-
-/* Обложка внизу */
-.cover {
-  max-width: 1184px;
-  margin: 92px auto 0;
-  position: relative;
-  min-height: 740px;
-  background-image: url('images/cover-trains.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #FFFFFF;
-  z-index: 1;
-}
-
-.cover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #2A2C2F;
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.cover:hover::before {
-  opacity: 0.8;
-}
-
-.cover__link {
-  text-decoration: none;
-  color: #FFFFFF;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.cover__title {
-  font-size: 72px;
-  line-height: 76px;
-  font-weight: 900;
-  margin: 0 0 32px;
-  max-width: 560px;
-  text-align: center;
-}
-
-.cover__subtitle {
-  font-size: 18px;
-  line-height: 22px;
-  margin: 0;
-  max-width: 360px;
-  text-align: center;
-}
-
-/* Подвал */
-.footer {
-  max-width: 1184px;
-  margin: 92px auto 24px;
-  padding: 0 48px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__links {
-  display: flex;
-  gap: 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer__link {
-  color: #FFFFFF;
-  font-size: 16px;
-  line-height: 18px;
-  text-decoration: none;
-}
-
-.footer__link:hover {
-  opacity: 0.8;
-}
-
-.footer__copyright {
-  font-size: 14px;
-  line-height: 16px;
-  margin: 0;
-}
-
-@media screen and (max-width: 1280px) and (min-width: 1024px) {
-  /* Общие стили */
-  .page {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-
-  /* Шапка */
-  .header {
-    padding: 0 48px;
-    max-width: 928px;
-  }
-
-  /* Обложка */
-  .lead {
-    max-width: 928px;
-    padding: 0 48px;
-  }
-
-  .lead__image {
-    width: 100%;
-  }
-
-  /* Описание */
-  .intro {
-    max-width: 690px;
-    margin: 92px 0 0 48px;
-    padding: 0;
-  }
-
-  /* Галерея - 3 колонки */
-  .photo-grid {
-    max-width: 928px;
-    padding: 0 48px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-
-  .photo-grid__item {
-    width: 100%;
-    height: 225px;
-  }
-
-  /* Карточки мест */
-  .places {
-    max-width: 928px;
-    padding: 0 48px;
-  }
-
-  .place {
-    grid-template-columns: 440px 1fr;
-    gap: 48px 32px;
-  }
-
-  .place__image {
-    max-width: 440px;
-  }
-
-  /* Обложка внизу */
-  .cover {
-    max-width: 1024px;
-    min-height: 640px;
-  }
-
-  .cover__title {
-    max-width: 560px;
-  }
-
-  /* Подвал */
-  .footer {
-    max-width: 928px;
-    padding: 0 48px;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  /* Общие настройки */
-  .page {
-    max-width: 768px;
-    margin: 0 auto;
-  }
-
-  /* Шапка */
-  .header {
-    padding: 0 24px;
-    max-width: 720px;
-  }
-
-  /* Обложка (lead) */
-  .lead {
-    max-width: 768px;
-    padding: 0;
-    margin-top: 48px;
-  }
-
-  .lead__title {
-    font-size: 96px;
-    line-height: 100px;
-    max-width: 720px;
-  }
-
-  .lead__subtitle {
-    font-size: 30px;
-    line-height: 36px;
-    max-width: 640px;
-    margin-bottom: 56px;
-  }
-
-  /* Секция intro */
-  .intro {
-    max-width: 720px;
-    margin: 88px auto 0;
-    padding: 0 24px;
-  }
-
-  .intro__title {
-    font-size: 54px;
-    line-height: 58px;
-  }
-
-  /* Галерея - 2 колонки */
-  .photo-grid {
-    max-width: 720px;
-    padding: 0 24px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 88px;
-  }
-
-  .photo-grid__item {
-    width: 100%;
-    height: 264px;
-  }
-
-  /* Карточки мест */
-  .places {
-    max-width: 720px;
-    margin: 88px auto 0;
-    padding: 0 24px;
-  }
-
-  .place {
-    grid-template-columns: 340px 1fr;
-    gap: 48px 28px;
-    margin-bottom: 72px;
-  }
-
-  .place__image {
-    max-width: 340px;
-  }
-
-  .place__title {
-    font-size: 42px;
-    line-height: 46px;
-  }
-
-  /* Обложка внизу */
-  .cover {
-    max-width: 768px;
-    min-height: 480px;
-    margin-top: 88px;
-  }
-
-  .cover__title {
-    font-size: 72px;
-    line-height: 76px;
-    max-width: 560px;
-  }
-
-  /* Подвал */
-  .footer {
-    max-width: 720px;
-    padding: 0 24px;
-    margin: 88px auto 24px;
-  }
-}
-@media screen and (max-width: 766px) {
-  /* Базовые стили */
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #2A2C2F;
-    color: #FFFFFF;
-    font-family: 'Inter', Arial, sans-serif;
-    min-width: 320px;
-  }
-
-  /* Центрирующий контейнер */
-  .page {
-    max-width: 768px;
-    min-width: 320px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Шапка */
-  .header {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    padding: 16px 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  .header__logo {
-    width: 142px;
-    height: 42px;
-  }
-
-  .header__lang-links {
-    display: flex;
-    gap: 18px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .header__lang-link {
-    color: #FFFFFF;
-    font-size: 18px;
-    line-height: 20px;
-    text-decoration: none;
-  }
-
-  .header__lang-link_active {
-    text-decoration: underline;
-  }
-
-  /* Обложка */
-  .lead {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    margin: 50px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .lead__title {
-    font-size: 40px;
-    line-height: 44px;
-    font-weight: 900;
-    text-align: center;
-    margin: 0 0 16px;
-    max-width: 288px;
-  }
-
-  .lead__subtitle {
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    margin: 0 0 40px;
-    max-width: 288px;
-  }
-
-  .lead__image {
-    width: 100%;
-    max-width: 320px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 8px;
-  }
-
-  .lead__caption {
-    align-self: flex-start;
-    font-size: 10px;
-    line-height: 14px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 0 0 0 16px;
-  }
-
-  /* Описание */
-  .intro {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    margin: 64px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .intro__title {
-    font-size: 32px;
-    line-height: 35px;
-    font-weight: 900;
-    text-align: left;
-    margin: 0 0 40px;
-    align-self: flex-start;
-    max-width: 288px;
-  }
-
-  .intro__text {
-    font-size: 16px;
-    line-height: 26px;
-    text-align: left;
-    margin: 0 0 34px;
-    max-width: 288px;
-  }
-
-  .intro__list {
-    font-size: 12px;
-    line-height: 18px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-self: flex-start;
-    max-width: 288px;
-  }
-
-  .intro__item {
-    margin-bottom: 8px;
-  }
-
-  /* Галерея */
-  .photo-grid {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    margin: 64px auto 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .photo-grid__item {
-    width: 100%;
-    max-width: 288px;
-    height: 216px;
-    object-fit: cover;
-    justify-self: center;
-  }
-
-  /* Карточки мест */
-  .places {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    margin: 64px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .place {
-    width: 100%;
-    max-width: 320px;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-areas:
-      "title"
-      "website"
-      "image"
-      "paragraphs";
-    gap: 30px;
-  }
-
-  .place:last-child {
-    margin-bottom: 0;
-  }
-
-  .place__title {
-    grid-area: title;
-    font-size: 32px;
-    line-height: 35px;
-    font-weight: 900;
-    margin: 0;
-    max-width: 288px;
-  }
-
-  .place__website {
-    grid-area: website;
-    max-width: 288px;
-  }
-
-  .place__url-heading {
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: 2px;
-    color: #AAAAAA;
-    margin: 0 0 12px;
-    text-transform: uppercase;
-  }
-
-  .place__link {
-    font-size: 18px;
-    line-height: 22px;
-    color: #FFFFFF;
-    text-decoration: underline;
-  }
-
-  .place__image {
-    grid-area: image;
-    width: 100%;
-    max-width: 320px;
-    height: 320px;
-    object-fit: cover;
-  }
-
-  .place__paragraphs {
-    grid-area: paragraphs;
-    max-width: 288px;
-  }
-
-  .place__paragraph {
-    font-size: 16px;
-    line-height: 26px;
-    margin: 0 0 25px;
-  }
-
-  .place__paragraph:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Обложка внизу */
-  .cover {
-    width: 100%;
-    max-width: 768px;
-    min-height: 200px;
-    margin: 64px auto 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('images/cover-trains.jpg');
-    background-size: cover;
-    background-position: center;
-    text-decoration: none;
-    color: #FFFFFF;
-  }
-
-  .cover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #2A2C2F;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-
-  .cover:hover::before {
-    opacity: 0.8;
-  }
-
-  .cover__link {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cover__title {
-    font-size: 32px;
-    line-height: 35px;
-    font-weight: 900;
-    text-align: center;
-    margin: 0 0 16px;
-    max-width: 288px;
-  }
-
-  .cover__subtitle {
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    margin: 0;
-    max-width: 288px;
-  }
-
-  /* Подвал */
-  .footer {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    margin: 64px auto 24px;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-  }
-
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 32px;
-    margin: 0 0 48px;
-    padding: 0;
-    list-style: none;
-  }
-
-  .footer__link {
-    color: #FFFFFF;
-    font-size: 24px;
-    line-height: 24px;
-    text-decoration: none;
-  }
-
-  .footer__copyright {
-    font-size: 14px;
-    line-height: 14px;
-    margin: 0;
-  }
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путешествия по России</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="page">
+
+    <!-- Шапка -->
+    <header class="header">
+        <img src="images/header-logo.svg" alt="Логотип" class="header__logo">
+        <div class="header__lang-links">
+            <a href="#" class="header__lang-link header__lang-link_active" data-lang="ru">Ru</a>
+            <a href="#" class="header__lang-link" data-lang="en">En</a>
+        </div>
+    </header>
+
+    <!-- Обложка -->
+    <section class="lead">
+        <h1 class="lead__title i18n-element" data-i18n-en="Travel across Russia">Путешествия по России</h1>
+        <p class="lead__subtitle i18n-element" data-i18n-en="The real country is not in the news, it's here">Настоящая страна не в выпусках новостей, а здесь.</p>
+        <img src="images/lead-polka.jpg" alt="ваша полка — верхняя" class="lead__image">
+        <p class="lead__caption i18n-element" data-i18n-en="your berth is the upper one">ваша полка — верхняя</p>
+    </section>
+
+    <!-- Описание -->
+    <section class="intro">
+        <h2 class="intro__title i18n-element" data-i18n-en="What didn't we see there?">Чего мы там не видели?</h2>
+        <p class="intro__text i18n-element" data-i18n-en="According to VTsIOM polls, 95% of Russians dream of traveling somewhere, but only 36% plan to spend their vacation in their home country. Like, what haven't we seen here at home? In reality, Russia is a whole universe with the gentle sea of the south, the dense forests of the Sayan Mountains and the harsh ice of the Putorana Plateau. And you can see all these beauties without millions in your account, a passport, or long flights. Like, for example, Vera Bashmakova, a brave young mother who took her three children in her arms, seated them in her Lada, and drove 20,000 kilometers across her native country. We have selected and described some interesting places worthy of your vacation.">
+            По опросам ВЦИОМ, 95% россиян мечтают куда-нибудь поехать, но только 36% планируют провести отпуск в родной стране. Мол, чего мы тут, дома, не видели? На самом деле, Россия — это целая вселенная с ласковым морем юга, густыми лесами Саян и суровыми льдами плато Путорана. А ещё увидеть все эти красоты можно без миллионов на счету, загранпаспорта и многочасовых перелетов. Как, например, Вера Башмакова — смелая молодая мама, которая взяла в охапку троих детей, усадила их в свою «Ладу» и проехала 20 тысяч километров по родной стране. Мы выбрали и описали некоторые интересные места, достойные вашего отпуска.
+        </p>
+        <ul class="intro__list">
+            <li class="intro__item i18n-element" data-i18n-en="Time zones: 11">Часовых поясов 11</li>
+            <li class="intro__item i18n-element" data-i18n-en="UNESCO natural heritage sites: 12">Объектов природного наследия ЮНЕСКО 12</li>
+            <li class="intro__item i18n-element" data-i18n-en="UNESCO cultural heritage sites: 16">Объектов культурного наследия ЮНЕСКО 16</li>
+            <li class="intro__item i18n-element" data-i18n-en="Nature reserves: 105">Природных заповедников 105</li>
+            <li class="intro__item i18n-element" data-i18n-en="Airports: 241">Аэропортов 241</li>
+        </ul>
+    </section>
+
+    <!-- Галерея -->
+    <section class="photo-grid">
+        <img src="images/photo-grid-tuman.jpg" alt="Туман" class="photo-grid__item">
+        <img src="images/photo-grid-sochi.jpg" alt="Сочи" class="photo-grid__item">
+        <img src="images/photo-grid-kondratiev.jpg" alt="Кондратьев" class="photo-grid__item">
+        <img src="images/photo-grid-kamchatka-2.jpg" alt="Камчатка 2" class="photo-grid__item">
+        <img src="images/photo-grid-kamchatka-1.jpg" alt="Камчатка 1" class="photo-grid__item">
+        <img src="images/photo-grid-baikal.jpg" alt="Байкал" class="photo-grid__item">
+        <img src="images/photo-grid-ergaki.jpg" alt="Эргаки" class="photo-grid__item">
+        <img src="images/photo-grid-elbrus.jpg" alt="Эльбрус" class="photo-grid__item">
+        <img src="images/photo-grid-baikal-2.jpg" alt="Байкал 2" class="photo-grid__item">
+        <img src="images/photo-grid-atharva-tulsi.jpg" alt="Atharva Tulsi" class="photo-grid__item">
+        <img src="images/photo-grid-arisa.jpg" alt="Arisa Chattasa" class="photo-grid__item">
+        <img src="images/photo-grid-ergaki.jpg" alt="Кольский" class="photo-grid__item">
+    </section>
+
+    <!-- Карточки мест -->
+    <section class="places">
+        <!-- Куршская коса -->
+        <article class="place">
+            <h2 class="place__title i18n-element" data-i18n-en="Curonian Spit">Куршская коса</h2>
+            <div class="place__website">
+                <p class="place__url-heading i18n-element" data-i18n-en="URL">URL</p>
+                <a href="http://park-kosa.ru" class="place__link i18n-element" data-i18n-en="park-kosa.ru" target="_blank" rel="noopener">park-kosa.ru</a>
+            </div>
+            <img src="images/place-kosa.jpg" alt="Куршская коса" class="place__image">
+            <div class="place__paragraphs">
+                <p class="place__paragraph i18n-element" data-i18n-en="Here, in the middle of forests and sand dunes, you can see two water horizons — the calm Curonian Lagoon on one side and the rippled waves of the Baltic Sea on the other. A unique natural zone on the edge of the Russian enclave.">
+                    Здесь, посреди лесов и песчаных дюн, вы сможете увидеть два водных горизонта — спокойного Куршского залива с одной стороны и подёрнутого рябью волн Балтийского моря с другой. Уникальная природная зона на краю российского анклава.
+                </p>
+                <p class="place__paragraph i18n-element" data-i18n-en="This, however, is not the end of the Kaliningrad region. For the traveler and explorer, there is also the westernmost point of Russia, the Baltic Spit, in the same neighborhood — and the German heritage of a scattering of small seaside towns. The atmosphere of these places eliminates the hustle and bustle, plunging into the tranquility of nature and the smell of the cool, steel sea.">
+                    На этом Калининградская область не заканчивается. Для путешественника и исследователя там же по соседству — самая западная точка России, Балтийская коса, — и немецкое наследие россыпи небольших приморских городов. Атмосфера здешних мест исключает суету, окуная в спокойствие природы и запах стального, прохладного моря.
+                </p>
+            </div>
+        </article>
+
+        <!-- Кольский -->
+        <article class="place">
+            <h2 class="place__title i18n-element" data-i18n-en="Kola Peninsula">Кольский</h2>
+            <div class="place__website">
+                <p class="place__url-heading i18n-element" data-i18n-en="URL">URL</p>
+                <a href="https://yourshot.nationalgeographic.com/photos/?keywords=kolskiy" class="place__link i18n-element" data-i18n-en="National Geographic" target="_blank" rel="noopener">National Geographic</a>
+            </div>
+            <img src="images/place-kolsky.jpg" alt="Кольский" class="place__image">
+            <div class="place__paragraphs">
+                <p class="place__paragraph i18n-element" data-i18n-en="Almost the entire peninsula is above the Arctic Circle. Sami tundra, from which to the south - taiga, and to the north - the Arctic Ocean, pretending to be the Barents Sea.">
+                    Почти весь полуостров находится за Полярным кругом. Самая тундра, от которой на юг — тайга, а на север — Ледовитый океан, прикидывающийся Баренцевым морем.
+                </p>
+                <p class="place__paragraph i18n-element" data-i18n-en="You may have watched Zvyagintsev and even heard the story of the Arctic festival in Teriberka. Perhaps the word 'Khibiny' did not remain under the snow of school memories of geography lessons. Perhaps you were not interested in the ultra-deep well penetrating the earth's crust, and apatites have long covered you with apathy. But your dream of seeing the northern lights begins with a ticket to Murmansk.">
+                    Возможно, вы смотрели Звягинцева и даже слышали историю арктического фестиваля в Териберке. Возможно, слово «Хибины» не осталось под снегом школьных воспоминаний об уроках географии. Возможно, вы не интересовались пронизывающей земную кору сверхглубокой скважиной, а от апатитов вас давно накрывает апатия. Но ваша мечта увидеть северное сияние начинается с билетом в Мурманск.
+                </p>
+            </div>
+        </article>
+
+        <!-- Алтай -->
+        <article class="place">
+            <h2 class="place__title i18n-element" data-i18n-en="Altai">Алтай</h2>
+            <div class="place__website">
+                <p class="place__url-heading i18n-element" data-i18n-en="URL">URL</p>
+                <a href="https://www.youtube.com/watch?v=7ZEsoV7kWAQ" class="place__link i18n-element" data-i18n-en="YouTube" target="_blank" rel="noopener">YouTube</a>
+            </div>
+            <img src="images/place-altai.jpg" alt="Алтай" class="place__image">
+            <div class="place__paragraphs">
+                <p class="place__paragraph i18n-element" data-i18n-en="Altai is one of the most beautiful places in Russia. First of all, because of the mountains: if you drive along the ridge, you will see slopes covered with pine trees, mountain rivers and lakes. And if you open the windows in the car, you can get acquainted with the invisible miracle of these places - the mountain air.">
+                    Алтай — одно из красивейших мест в России. В первую очередь из-за гор: если ехать вдоль хребта, вы увидите склоны, усыпанные соснами, горные реки и озёра. А если вы откроете в автомобиле окна, сможете познакомиться с невидимым чудом здешних мест — горным воздухом.
+                </p>
+                <p class="place__paragraph i18n-element" data-i18n-en="The climate in Altai is temperate, so it's best to go here in summer. This way you will see all the diversity of local flora and fauna. Moose roam the forests of Altai, eagles fly over the ridges, and roe deer graze on the plains. And the famous manuls are also inhabitants of the Altai Territory.">
+                    Климат на Алтае умеренный, поэтому ехать сюда лучше всего летом. Так вы увидите всё разнообразие местной флоры и фауны. По лесам Алтая бродят лоси, над хребтами летают орлы, а на равнинах пасутся косули. И знаменитые манулы — тоже обитатели Алтайского края.
+                </p>
+            </div>
+        </article>
+
+        <!-- Зимний Байкал -->
+        <article class="place">
+            <h2 class="place__title i18n-element" data-i18n-en="Winter Baikal">Зимний Байкал</h2>
+            <div class="place__website">
+                <p class="place__url-heading i18n-element" data-i18n-en="URL">URL</p>
+                <a href="https://vk.com/baikalmile" class="place__link i18n-element" data-i18n-en="https://vk.com/baikalmile" target="_blank" rel="noopener">https://vk.com/baikalmile</a> 
+            </div>
+            <img src="images/place-winter-baikal.jpg" alt="Зимний Байкал" class="place__image">
+            <div class="place__paragraphs">
+                <p class="place__paragraph i18n-element" data-i18n-en="Everyone knows Baikal as the largest lake in the world. Many also know that this is the largest source of fresh water and one of the most beautiful places in Russia.">
+                    Всем известен Байкал как крупнейшее озеро в мире. Многие также знают, что это самый большой источник пресной воды и одно из красивейших мест в России.
+                </p>
+                <p class="place__paragraph i18n-element" data-i18n-en="Of course, all this is true. But Baikal is also an ideal place for skijoring competitions. This is a sport where a skier ties himself to a motorcycle, and the tandem tries to develop as much speed as possible on the ice. In March 2019, a world record was set at the Baikal Mile festival - 197.011 km/h.">
+                    Конечно, это всё так. Но Байкал ещё идеальное место для соревнований по скийорингу. Это такой вид спорта, когда лыжник привязывает себя к мотоциклу, и тандем старается развить как можно большую скорость на льду. В марте 2019 года на фестивале «Байкальская миля» был поставлен мировой рекорд — 197.011 км/ч.
+                </p>
+            </div>
+        </article>
+
+        <!-- Карелия -->
+        <article class="place">
+            <h2 class="place__title i18n-element" data-i18n-en="Karelia">Карелия</h2>
+            <div class="place__website">
+                <p class="place__url-heading i18n-element" data-i18n-en="URL">URL</p>
+                <a href="http://vodlozero.ru/" class="place__link i18n-element" data-i18n-en="http://vodlozero.ru/" target="_blank" rel="noopener">http://vodlozero.ru/</a>
+            </div>
+            <img src="images/place-karelia.jpg" alt="Карелия" class="place__image">
+            <div class="place__paragraphs">
+                <p class="place__paragraph i18n-element" data-i18n-en="Siberia ends not at the Urals, but in Karelia: the Siberian larch that forms the taiga does not grow west of Lake Vodlozero. But here it grows up to 30 meters - the forests of Karelian national parks have never known an axe due to impassable swamps. Some pines are more than half a millennium old. Touch a living creature that saw the sun before Ivan the Terrible saw it. In the virgin forest you won't find a path for a hundred kilometers. And on rare paths, trees a couple of meters from the ground are marked with bear claws. So that everyone knows who's boss.">
+                    Сибирь заканчивается не на Урале, а в Карелии: образующая тайгу сибирская лиственница не растёт западнее Водлозера. Зато здесь она вымахивает на 30 метров — леса карельских национальных парков из-за непроходимых болот никогда не знали топора. Некоторым сосням уже больше чем полтысячелетия. Прикоснитесь к живому существу, видевшему солнце раньше, чем увидел его Иван Грозный. В девственном лесу на сотню километров не встретишь тропы. А на редких тропинках деревья в паре метров от земли помечены медвежьими когтями. Чтобы все знали, кто тут хозяин.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <!-- Обложка внизу -->
+    <section class="cover">
+        <a href="https://stampsy.com/na-elektrichkakh-do-baikala" class="cover__link" target="_blank" rel="noopener">
+            <h2 class="cover__title i18n-element" data-i18n-en="To Baikal &laquo;on dogs&raquo;">До Байкала «на собаках»</h2>
+            <p class="cover__subtitle i18n-element" data-i18n-en="Based on the educational topic about the Trans-Siberian Railway — a journey from the capital to Lake Baikal by train.">По мотивам учебной темы о Транссибе — путешествие от столицы до Байкала на электричках.</p>
+        </a>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <nav class="footer__links">
+            <a href="https://yandex.ru/maps" class="footer__link i18n-element" data-i18n-en="Maps" target="_blank" rel="noopener">Карты</a>
+            <a href="https://yandex.ru/pogoda" class="footer__link i18n-element" data-i18n-en="Weather" target="_blank" rel="noopener">Погода</a>
+            <a href="https://rasp.yandex.ru" class="footer__link i18n-element" data-i18n-en="Schedule" target="_blank" rel="noopener">Расписание</a>
+            <a href="https://calendar.yandex.ru" class="footer__link i18n-element" data-i18n-en="Calendar" target="_blank" rel="noopener">Календарь</a>
+            <a href="https://travel.yandex.ru" class="footer__link i18n-element" data-i18n-en="Travel" target="_blank" rel="noopener">Путешествия</a>
+        </nav>
+        <p class="footer__copyright i18n-element" data-i18n-en="&copy; Inserted my name. David">&copy; Вписал свое имя. Давид</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langLinks = document.querySelectorAll('.header__lang-link');
+            const langElements = document.querySelectorAll('.i18n-element');
+            let currentLang = 'ru';
+            
+            // Сохраняем оригинальный русский текст
+            langElements.forEach(element => {
+                element.setAttribute('data-original-ru', element.innerHTML);
+            });
+            
+            // Функция перевода страницы
+            function translatePage(lang) {
+                // Обновляем активную ссылку языка
+                langLinks.forEach(link => {
+                    if (link.dataset.lang === lang) {
+                        link.classList.add('header__lang-link_active');
+                    } else {
+                        link.classList.remove('header__lang-link_active');
+                    }
+                });
+                
+                // Обновляем текст элементов
+                langElements.forEach(element => {
+                    if (lang === 'en' && element.dataset.i18nEn) {
+                        element.innerHTML = element.dataset.i18nEn;
+                    } else {
+                        // Возвращаем русский текст из сохранённого оригинала
+                        element.innerHTML = element.getAttribute('data-original-ru');
+                    }
+                });
+                
+                // Обновляем язык документа
+                document.documentElement.lang = lang;
+                currentLang = lang;
+                
+                // Сохраняем выбор языка
+                localStorage.setItem('preferredLang', lang);
+            }
+            
+            // Обработчики кликов для языковых ссылок
+            langLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.dataset.lang;
+                    if (lang !== currentLang) {
+                        translatePage(lang);
+                    }
+                });
+            });
+            
+            // Проверяем сохранённый язык при загрузке
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && savedLang !== 'ru') {
+                translatePage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
