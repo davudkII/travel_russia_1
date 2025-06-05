@@ -174,7 +174,7 @@
             const langElements = document.querySelectorAll('.i18n-element');
             let currentLang = 'ru';
             
-            
+            // Сохраняем оригинальный русский текст
             langElements.forEach(element => {
                 element.setAttribute('data-original-ru', element.innerHTML);
             });
@@ -190,7 +190,7 @@
                     }
                 });
                 
-                
+                // Обновляем текст элементов
                 langElements.forEach(element => {
                     if (lang === 'en' && element.dataset.i18nEn) {
                         element.innerHTML = element.dataset.i18nEn;
@@ -200,15 +200,15 @@
                     }
                 });
                 
-               
+                // Обновляем язык документа
                 document.documentElement.lang = lang;
                 currentLang = lang;
                 
-                
+                // Сохраняем выбор языка
                 localStorage.setItem('preferredLang', lang);
             }
             
-            
+            // Обработчики кликов для языковых ссылок
             langLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
